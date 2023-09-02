@@ -2,6 +2,7 @@
 #include <iostream>
 
 using namespace std;
+
 // User class is the superclass of the other sub-classes. It contains common veriables and functions.
 class User {
 public:
