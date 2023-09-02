@@ -19,5 +19,5 @@ public:
 	void ShowInformations();
 
 private:
-	int* salary;
+	int* salary = new int(0);
 };
