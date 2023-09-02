@@ -7,9 +7,14 @@ Client::Client(string firstName_, string lastName_, int age_, long long idNumber
 	
 }
 
+Client::~Client()
+{
+	cout << GetFirstName() << " " << GetLastName() << ": Client deleted." << endl;
+}
+
 long long Client::GetMoney()
 {
-	return money;
+	return *money;
 }
 
 void Client::ShowInformations()
@@ -20,5 +25,5 @@ void Client::ShowInformations()
 
 void Client::SetMoney(long long money_)
 {
-	money = money_;
+	money = new long long(money_);
 }

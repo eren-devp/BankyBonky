@@ -6,6 +6,9 @@ public:
 	// Constructor function of the employee.
 	Employee(string firstName_, string lastName_, int age_, long long idNumber_, string status_, int salary);
 
+	// Destructor function of the employee.
+	~Employee();
+
 	// Returns the salary of the employee.
 	int GetSalary();
 
@@ -16,5 +19,5 @@ public:
 	void ShowInformations();
 
 private:
-	int salary = 0;
+	int* salary;
 };

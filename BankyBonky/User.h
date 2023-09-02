@@ -8,6 +8,9 @@ public:
 	// Base constructor function of the person. 
 	User(string firstName_, string lastName_, int age_, long long idNumber_, string status_);
 
+	// Base destructor function of the person.
+	~User();
+
 	// Returns the first name of the person.
 	string GetFirstName();
 
@@ -43,9 +46,9 @@ public:
 	void ShowInformations();
 
 private:
-	string firstName;
-	string lastName;
-	string status;
-	int age = 0;
-	long long idNumber = 0;
+	string* firstName = nullptr;
+	string* lastName = nullptr;
+	string* status = nullptr;
+	int* age = new int(0);
+	long long* idNumber = new long long(0);
 };

@@ -9,6 +9,8 @@ public:
 	// Constructor function of the client.
 	Client(string firstName_, string lastName_, int age_, long long idNumber_, string status_);
 
+	~Client();
+
 	// Returns the current money of the client.
 	long long GetMoney();
 
@@ -20,5 +22,5 @@ public:
 	void SetMoney(long long money_);
 
 private:
-	long long money = 0;
+	long long* money = new long long(0);
 };

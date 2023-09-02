@@ -9,29 +9,34 @@ User::User(string firstName_, string lastName_, int age_, long long idNumber_, s
 	SetStatus(status_);
 }
 
+User::~User()
+{
+	// Base destructor.
+}
+
 string User::GetFirstName()
 {
-	return firstName;
+	return *firstName;
 }
 
 string User::GetLastName()
 {
-	return lastName;
+	return *lastName;
 }
 
 string User::GetStatus()
 {
-	return status;
+	return *status;
 }
 
 int User::GetAge()
 {
-	return age;
+	return *age;
 }
 
 long long User::GetIDNumber()
 {
-	return idNumber;
+	return *idNumber;
 }
 
 void User::SetFirstName(string firstName_)
@@ -40,7 +45,7 @@ void User::SetFirstName(string firstName_)
 		throw exception("First name can not be empty.");
 	}
 	else {
-		firstName = firstName_;
+		firstName = new string(firstName_);
 	}
 }
 
@@ -50,7 +55,7 @@ void User::SetLastName(string lastName_)
 		throw exception("Last name can not be empty.");
 	}
 	else {
-		lastName = lastName_;
+		lastName = new string(lastName_);
 	}
 }
 
@@ -60,7 +65,7 @@ void User::SetAge(int age_)
 		throw exception("Person must be older than 18!");
 	}
 	else {
-		age = age_;
+		age = new int(age_);
 	}
 }
 
@@ -70,13 +75,13 @@ void User::SetIDNumber(long long idNumber_)
 		throw exception("Not valid ID number.");
 	}
 	else {
-		idNumber = idNumber_;
+		idNumber = new long long(idNumber_);
 	}
 }
 
 void User::SetStatus(string status_)
 {
-	status = status_;
+	status = new string(status_);
 }
 
 void User::ShowInformations()
