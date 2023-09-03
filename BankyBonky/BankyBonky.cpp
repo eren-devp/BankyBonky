@@ -37,10 +37,10 @@ int main()
 		int input;
 
 		Manager manager = Manager();
-		Client* client1 = new Client("Talha", "Genc", 19, 11111111111, "VIP");
-		Client* client2 = new Client("Burak", "Ergul", 22, 11111111111, "Client");
-		Employee* employee1 = new Employee("Cem", "Deveci", 19, 11111111111, "Manager", 33000);
-		Employee* employee2 = new Employee("Serhat", "Saglam", 18, 11111111111, "Employee", 18000);
+		Client* client1 = new Client("Talha", "Genc", 19, 11111111111, "VIP"); // Test client.
+		Client* client2 = new Client("Burak", "Ergul", 22, 11111111111, "Client"); // Test client.
+		Employee* employee1 = new Employee("Cem", "Deveci", 19, 11111111111, "Manager", 33000); // Test client.
+		Employee* employee2 = new Employee("Serhat", "Saglam", 18, 11111111111, "Employee", 18000); // Test client.
 
 		manager.AddClient(client1);
 		manager.AddClient(client2);

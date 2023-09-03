@@ -17,7 +17,7 @@ public:
 	void RemoveClient(Client* client_);
 
 	// Shows all the clients on list.
-	void ShowClients(bool isDetailed);
+	void ShowClients(bool showDetails);
 
 	// To be able to change the client's informations.
 	void ManageClient(int number);
@@ -31,7 +31,7 @@ public:
 	void RemoveClient(Employee* employee_);
 
 	// Shows all the employees on list.
-	void ShowEmployees(bool isDetailed);
+	void ShowEmployees(bool showDetails);
 
 	// To be able to change the client's informations.
 	void ManageEmployee(int number);

@@ -13,9 +13,9 @@ void Manager::RemoveClient(Client* client_)
 	cout << "Client deleted: " << client_->GetFirstName() << endl << endl;
 }
 
-void Manager::ShowClients(bool isDetailed) {
+void Manager::ShowClients(bool showDetails) {
 	if (!clients.empty()) {
-		if (isDetailed) {
+		if (showDetails) {
 			for (Client* client : clients) {
 				client->ShowInformations();
 				cout << endl;
@@ -39,20 +39,21 @@ void Manager::ShowClients(bool isDetailed) {
 }
 
 void Manager::ManageClient(int number) {
-	int foo;
+	int input;
 	bool run = true;
 	--number;
 
 	list<Client*>::iterator it = clients.begin();
 	advance(it, number);
 
+	// Yeah I did repeat myself.
 	while (run) {
 		(*it)->ShowInformations();
 		cout << endl;
 		cout << clientCommands;
-		cin >> foo;
+		cin >> input;
 
-		switch (foo)
+		switch (input)
 		{
 		case 0:
 			run = false;
@@ -114,10 +115,10 @@ void Manager::RemoveClient(Employee* employee_)
 	employees.remove(employee_);
 }
 
-void Manager::ShowEmployees(bool isDetailed)
+void Manager::ShowEmployees(bool showDetails)
 {
 	if (!employees.empty()) {
-		if (isDetailed) {
+		if (showDetails) {
 			for (Employee* employee : employees)
 			{
 				employee->ShowInformations();
@@ -142,20 +143,21 @@ void Manager::ShowEmployees(bool isDetailed)
 }
 
 void Manager::ManageEmployee(int number) {
-	int foo;
+	int input;
 	bool run = true;
 	--number;
 
 	list<Employee*>::iterator it = employees.begin();
 	advance(it, number);
 	
+	// Yeah I did repeat myself.
 	while (run) {
 		(*it)->ShowInformations();
 		cout << endl;
 		cout << clientCommands;
-		cin >> foo;
+		cin >> input;
 
-		switch (foo)
+		switch (input)
 		{
 		case 0:
 			run = false;
