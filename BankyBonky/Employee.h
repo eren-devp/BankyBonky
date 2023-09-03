@@ -4,7 +4,10 @@
 class Employee : public User {
 public:
 	// Constructor function of the employee.
-	Employee(string firstName_, string lastName_, int age_, long long idNumber_, string status_, int salary);
+	Employee(string firstName_, string lastName_, int age_, long long idNumber_, string status_, int salary_);
+
+	// Overrided constructor.
+	Employee(tuple<string, string, int, long long, string>* informations, int salary_);
 
 	// Destructor function of the employee.
 	~Employee();

@@ -7,6 +7,10 @@ Client::Client(string firstName_, string lastName_, int age_, long long idNumber
 	
 }
 
+Client::Client(tuple<string, string, int, long long, string>* informations) : User(informations) {
+	
+}
+
 Client::~Client()
 {
 	cout << GetFirstName() << " " << GetLastName() << ": Client deleted." << endl;

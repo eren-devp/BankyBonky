@@ -1,16 +1,140 @@
 ﻿#include <iostream>
+#include <tuple>
 #include "BankSystem.h"
 
 using namespace std;
 
+auto GetBasicInformations() {
+	string firstName;
+	string lastName;
+	string status;
+	int age;
+	long long idNumber;
+
+	cout << "First name: ";
+	cin >> firstName;
+
+	cout << "Last name: ";
+	cin >> lastName;
+
+	cout << "Status: ";
+	cin >> status;
+
+	cout << "Age: ";
+	cin >> age;
+
+	cout << "ID number: ";
+	cin >> idNumber;
+
+	return make_tuple(firstName, lastName, age, idNumber, status);
+}
+
+const string commandLines = "> 1: List clients.\n> 2: List employees.\n> 3: Add client.\n> 4: Add employee.\n> 0: Exit.";
+
 int main()
 {
 	try {
-		Client* client = new Client("Talha", "Genc", 18, 11111111111, "VIP Client");
-		Employee* employee = new Employee("Burak", "Ergul", 19, 11111111111, "Manager", 15000);
+		int input;
 
-		client->ShowInformations();
-		employee->ShowInformations();
+		Manager manager = Manager();
+		Client* client1 = new Client("Talha", "Genc", 19, 11111111111, "VIP");
+		Client* client2 = new Client("Burak", "Ergul", 22, 11111111111, "Client");
+		Employee* employee1 = new Employee("Cem", "Deveci", 19, 11111111111, "Manager", 33000);
+		Employee* employee2 = new Employee("Serhat", "Saglam", 18, 11111111111, "Employee", 18000);
+
+		manager.AddClient(client1);
+		manager.AddClient(client2);
+		manager.AddEmployee(employee1);
+		manager.AddEmployee(employee2);
+		
+		while (true)
+		{
+			cout << commandLines << endl;
+			cin >> input;
+
+			switch (input)
+			{
+			case 0:
+				exit(0x0);
+				break;
+
+			case 1: {
+				bool run = true;
+				system("cls");
+
+				while (run) {
+					int input_2 = -1;
+
+					manager.ShowClients(false);
+
+					cout << "For Detailed Informations: 0\nTo Exit: any negative number\n> ";
+					cin >> input_2;
+
+					if (input_2 == 0) {
+						manager.ShowClients(true);
+					}
+					else if (input_2 < 0) {
+						run = false;
+					}
+					else {
+						system("cls");
+						manager.ManageClient(input_2);
+					}
+				}
+				break;
+			}
+
+			case 2: {
+
+				bool run = true;
+
+				while (run) {
+					int input_2 = -1;
+
+					manager.ShowEmployees(false);
+
+					cout << "For Detailed Informations: 0\nTo Exit: any negative number\n> ";
+					cin >> input_2;
+
+					if (input_2 == 0) {
+						system("cls");
+						manager.ShowEmployees(true);
+					}
+					else if (input_2 < 0) {
+						run = false;
+					}
+					else {
+						system("cls");
+						manager.ManageEmployee(input_2);
+					}
+				}
+			}
+
+			case 3: {
+				auto infos = GetBasicInformations();
+
+				Client* newClient = new Client(&infos);
+				manager.AddClient(newClient);
+				break;
+			}
+
+			case 4: {
+				auto infos = GetBasicInformations();
+				int salary;
+
+				cout << "Enter the salary: ";
+				cin >> salary;
+
+				Employee* newEmployee = new Employee(&infos, salary);
+				manager.AddEmployee(newEmployee);
+				break;
+			}
+
+			default:
+				cout << "Please enter a valid number." << endl << endl;
+				break;
+			}
+		}
 	}
 	catch (exception out) {
 		cout << out.what() << endl; // If we had any exceptions out we need to see them.

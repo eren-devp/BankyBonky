@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <tuple>
 
 using namespace std;
 
@@ -8,6 +9,9 @@ class User {
 public:
 	// Base constructor function of the person. 
 	User(string firstName_, string lastName_, int age_, long long idNumber_, string status_);
+
+	// Overrided constructor.
+	User(tuple<string, string, int, long long, string>* informations);
 
 	// Base destructor function of the person.
 	~User();
@@ -45,6 +49,12 @@ public:
 
 	// Shows the all informations affiliated with person.
 	void ShowInformations();
+
+	bool operator == (const User& user) const {
+		if (user.idNumber == this->idNumber)
+			return true;
+		return false;
+	}
 
 private:
 	string* firstName = nullptr;

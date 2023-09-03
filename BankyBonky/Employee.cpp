@@ -6,6 +6,10 @@ Employee::Employee(string firstName_, string lastName_, int age_, long long idNu
 	SetSalary(salary_);
 }
 
+Employee::Employee(tuple<string, string, int, long long, string>* informations, int salary_) : User(informations) {
+	SetSalary(salary_);
+}
+
 Employee::~Employee()
 {
 	cout << GetFirstName() << " " << GetLastName() << ": Employee deleted." << endl;

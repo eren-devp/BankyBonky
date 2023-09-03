@@ -9,6 +9,14 @@ User::User(string firstName_, string lastName_, int age_, long long idNumber_, s
 	SetStatus(status_);
 }
 
+User::User(tuple<string, string, int, long long, string>* informations) {
+	SetFirstName(get<0>(*informations));
+	SetLastName(get<1>(*informations));
+	SetAge(get<2>(*informations));
+	SetIDNumber(get<3>(*informations));
+	SetStatus(get<4>(*informations));
+}
+
 User::~User()
 {
 	// Base destructor.
