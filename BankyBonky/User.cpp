@@ -22,32 +22,32 @@ User::~User()
 	// Base destructor.
 }
 
-string User::GetFirstName()
+inline string User::GetFirstName()
 {
 	return *firstName;
 }
 
-string User::GetLastName()
+inline string User::GetLastName()
 {
 	return *lastName;
 }
 
-string User::GetStatus()
+inline string User::GetStatus()
 {
 	return *status;
 }
 
-int User::GetAge()
+inline int User::GetAge()
 {
 	return *age;
 }
 
-long long User::GetIDNumber()
+inline long long User::GetIDNumber()
 {
 	return *idNumber;
 }
 
-void User::SetFirstName(string firstName_)
+inline void User::SetFirstName(string firstName_)
 {
 	if (firstName_.empty()) {
 		throw exception("First name can not be empty.");
@@ -57,7 +57,7 @@ void User::SetFirstName(string firstName_)
 	}
 }
 
-void User::SetLastName(string lastName_)
+inline void User::SetLastName(string lastName_)
 {
 	if (lastName_.empty()) {
 		throw exception("Last name can not be empty.");
@@ -67,7 +67,7 @@ void User::SetLastName(string lastName_)
 	}
 }
 
-void User::SetAge(int age_)
+inline void User::SetAge(int age_)
 {
 	if (age_ < 18) {
 		throw exception("Person must be older than 18!");
@@ -77,7 +77,7 @@ void User::SetAge(int age_)
 	}
 }
 
-void User::SetIDNumber(long long idNumber_)
+inline void User::SetIDNumber(long long idNumber_)
 {
 	if (idNumber_ < 10000000000) {
 		throw exception("Not valid ID number.");
@@ -87,7 +87,7 @@ void User::SetIDNumber(long long idNumber_)
 	}
 }
 
-void User::SetStatus(string status_)
+inline void User::SetStatus(string status_)
 {
 	status = new string(status_);
 }

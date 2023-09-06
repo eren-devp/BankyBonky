@@ -1,5 +1,7 @@
-﻿#include <iostream>
+﻿#pragma once
+#include <iostream>
 #include <tuple>
+
 #include "BankSystem.h"
 
 using namespace std;
@@ -69,6 +71,7 @@ int main()
 
 					cout << "For Detailed Informations: 0\nTo Exit: any negative number\n> ";
 					cin >> input_2;
+					cout << endl;
 
 					if (input_2 == 0) {
 						manager.ShowClients(true);

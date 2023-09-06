@@ -17,35 +17,35 @@ public:
 	~User();
 
 	// Returns the first name of the person.
-	string GetFirstName();
+	inline string GetFirstName();
 
 	// Returns the last name of the person.
-	string GetLastName();
+	inline string GetLastName();
 
 	// Returns the status of the person.
-	string GetStatus();
+	inline string GetStatus();
 
 	// Returns age of the person.
-	int GetAge();
+	inline int GetAge();
 
 	// Returns ID number of the person.
-	long long GetIDNumber();
+	inline long long GetIDNumber();
 
 
 	// Sets the first name of the person.
-	void SetFirstName(string firstName_);
+	inline void SetFirstName(string firstName_);
 
 	// Sets the last name of the person.
-	void SetLastName(string lastName_);
+	inline void SetLastName(string lastName_);
 
 	// Sets the age of the person.
-	void SetAge(int age_);
+	inline void SetAge(int age_);
 
 	// Sets the ID number of the person.
-	void SetIDNumber(long long idNumber_);
+	inline void SetIDNumber(long long idNumber_);
 
 	// Sets the status of the person.
-	void SetStatus(string status_);
+	inline void SetStatus(string status_);
 
 	// Shows the all informations affiliated with person.
 	void ShowInformations();

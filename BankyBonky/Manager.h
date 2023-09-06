@@ -28,7 +28,7 @@ public:
 	void AddEmployee(Employee* employee_);
 
 	// Remove employee from the employee list.
-	void RemoveClient(Employee* employee_);
+	void RemoveEmployee(Employee* employee_);
 
 	// Shows all the employees on list.
 	void ShowEmployees(bool showDetails);

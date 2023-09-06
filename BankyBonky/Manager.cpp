@@ -109,7 +109,7 @@ void Manager::AddEmployee(Employee* employee_)
 	cout << "Employee added: " << employee_->GetFirstName() << endl << endl;
 }
 
-void Manager::RemoveClient(Employee* employee_)
+void Manager::RemoveEmployee(Employee* employee_)
 {
 	cout << "Employee removed: " << employee_->GetFirstName() << endl;
 	employees.remove(employee_);
@@ -154,7 +154,7 @@ void Manager::ManageEmployee(int number) {
 	while (run) {
 		(*it)->ShowInformations();
 		cout << endl;
-		cout << clientCommands;
+		cout << employeeCommands;
 		cin >> input;
 
 		switch (input)
