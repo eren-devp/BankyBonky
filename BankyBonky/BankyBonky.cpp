@@ -1,12 +1,11 @@
-﻿#pragma once
-#include <tuple>
+﻿#include <tuple>
 #include <iostream>
 
 #include "Client.hpp"
 #include "Employee.hpp"
 #include "Manager.hpp"
 
-using namespace std;
+using namespace std; // It's actually bad to use it like that but idc.
 
 auto GetBasicInformations() {
 	string firstName;
@@ -59,13 +58,14 @@ int main()
 			switch (input)
 			{
 			case 0:
-				exit(0x0);
+				exit(EXIT_SUCCESS);
 				break;
 
 			case 1: {
 				system("cls");
+				bool run = true;
 
-				while (true) {
+				while (run) {
 					int input_2 = -1;
 
 					manager->ShowClients(false);
@@ -78,7 +78,7 @@ int main()
 						manager->ShowClients(true);
 					}
 					else if (input_2 < 0) {
-						break;
+						run = false;
 					}
 					else {
 						system("cls");
@@ -89,7 +89,10 @@ int main()
 			}
 
 			case 2: {
-				while (true) {
+				system("cls");
+				bool run = true;
+
+				while (run) {
 					int input_2 = -1;
 
 					manager->ShowEmployees(false);
@@ -102,7 +105,7 @@ int main()
 						manager->ShowEmployees(true);
 					}
 					else if (input_2 < 0) {
-						break;
+						run = false;
 					}
 					else {
 						system("cls");

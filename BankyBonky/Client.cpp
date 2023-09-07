@@ -1,7 +1,5 @@
 #include "Client.hpp"
 
-using namespace std;
-
 Client::Client(string firstName_, string lastName_, int age_, long long idNumber_, string status_) : User(firstName_, lastName_, age_, idNumber_, status_)
 {
 	

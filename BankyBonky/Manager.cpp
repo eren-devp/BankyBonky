@@ -38,66 +38,71 @@ void Manager::ShowClients(bool showDetails) {
 	}
 }
 
-void Manager::ManageClient(int number) {
-	int input;
-	bool run = true;
-	--number;
+void Manager::ManageClient(int number) {	
+	if (clients.size() < number) {
+		throw exception("There is no such a client. Please enter a valid client no.");
+	}
+	else {
+		int input;
+		bool run = true;
+		--number;
 
-	list<Client*>::iterator it = clients.begin();
-	advance(it, number);
+		list<Client*>::iterator it = clients.begin();
+		advance(it, number);
 
-	// Yeah I did repeat myself.
-	while (run) {
-		(*it)->ShowInformations();
-		cout << endl;
-		cout << clientCommands;
-		cin >> input;
+		// Yeah I did repeat myself.
+		while (run) {
+			(*it)->ShowInformations();
+			cout << endl;
+			cout << clientCommands;
+			cin >> input;
 
-		switch (input)
-		{
-		case 0:
-			run = false;
-			break;
-		case 1: {
-			string newFirstName;
-			cout << "Enter new first name: ";
-			cin >> newFirstName;
-			(*it)->SetFirstName(newFirstName);
-			break;
+			switch (input)
+			{
+			case 0:
+				run = false;
+				break;
+			case 1: {
+				string newFirstName;
+				cout << "Enter new first name: ";
+				cin >> newFirstName;
+				(*it)->SetFirstName(newFirstName);
+				break;
+			}
+			case 2: {
+				string newLastName;
+				cout << "Enter new last name: ";
+				cin >> newLastName;
+				(*it)->SetLastName(newLastName);
+				break;
+			}
+			case 3: {
+				int newAge;
+				cout << "Enter new age: ";
+				cin >> newAge;
+				(*it)->SetAge(newAge);
+				break;
+			}
+			case 4: {
+				string newStatus;
+				cout << "Enter new status: ";
+				cin >> newStatus;
+				(*it)->SetStatus(newStatus);
+				break;
+			}
+			case 5: {
+				long long newSalary;
+				cout << "Enter new money: ";
+				cin >> newSalary;
+				(*it)->SetMoney(newSalary);
+				break;
+			}
+			default:
+				cout << "Unknown command." << endl;
+				break;
+			}
+			system("cls");
 		}
-		case 2: {
-			string newLastName;
-			cout << "Enter new last name: ";
-			cin >> newLastName;
-			(*it)->SetLastName(newLastName);
-			break;
-		}
-		case 3: {
-			int newAge;
-			cout << "Enter new age: ";
-			cin >> newAge;
-			(*it)->SetAge(newAge);
-			break;
-		}
-		case 4: {
-			string newStatus;
-			cout << "Enter new status: ";
-			cin >> newStatus;
-			(*it)->SetStatus(newStatus);
-			break;
-		}
-		case 5: {
-			long long newSalary;
-			cout << "Enter new money: ";
-			cin >> newSalary;
-			(*it)->SetMoney(newSalary);
-			break;
-		}
-		default:
-			cout << "Unknown command." << endl;
-			break;
-		}
-		system("cls");
 	}
 }
 #pragma endregion
@@ -143,65 +148,70 @@ void Manager::ShowEmployees(bool showDetails)
 }
 
 void Manager::ManageEmployee(int number) {
-	int input;
-	bool run = true;
-	--number;
+	if (clients.size() < number) {
+		throw exception("There is no such a employee. Please enter a valid employee no.");
+	}
+	else {
+		int input;
+		bool run = true;
+		--number;
 
-	list<Employee*>::iterator it = employees.begin();
-	advance(it, number);
-	
-	// Yeah I did repeat myself.
-	while (run) {
-		(*it)->ShowInformations();
-		cout << endl;
-		cout << employeeCommands;
-		cin >> input;
+		list<Employee*>::iterator it = employees.begin();
+		advance(it, number);
 
-		switch (input)
-		{
-		case 0:
-			run = false;
-			break;
-		case 1: {
-			string newFirstName;
-			cout << "Enter new first name: ";
-			cin >> newFirstName;
-			(*it)->SetFirstName(newFirstName);
-			break;
+		// Yeah I did repeat myself.
+		while (run) {
+			(*it)->ShowInformations();
+			cout << endl;
+			cout << employeeCommands;
+			cin >> input;
+
+			switch (input)
+			{
+			case 0:
+				run = false;
+				break;
+			case 1: {
+				string newFirstName;
+				cout << "Enter new first name: ";
+				cin >> newFirstName;
+				(*it)->SetFirstName(newFirstName);
+				break;
+			}
+			case 2: {
+				string newLastName;
+				cout << "Enter new last name: ";
+				cin >> newLastName;
+				(*it)->SetLastName(newLastName);
+				break;
+			}
+			case 3: {
+				int newAge;
+				cout << "Enter new age: ";
+				cin >> newAge;
+				(*it)->SetAge(newAge);
+				break;
+			}
+			case 4: {
+				string newStatus;
+				cout << "Enter new status: ";
+				cin >> newStatus;
+				(*it)->SetStatus(newStatus);
+				break;
+			}
+			case 5: {
+				int newSalary;
+				cout << "Enter new salary: ";
+				cin >> newSalary;
+				(*it)->SetSalary(newSalary);
+				break;
+			}
+			default:
+				cout << "Unknown command." << endl;
+				break;
+			}
+			system("cls");
 		}
-		case 2: {
-			string newLastName;
-			cout << "Enter new last name: ";
-			cin >> newLastName;
-			(*it)->SetLastName(newLastName);
-			break;
-		}
-		case 3: {
-			int newAge;
-			cout << "Enter new age: ";
-			cin >> newAge;
-			(*it)->SetAge(newAge);
-			break;
-		}
-		case 4: {
-			string newStatus;
-			cout << "Enter new status: ";
-			cin >> newStatus;
-			(*it)->SetStatus(newStatus);
-			break;
-		}
-		case 5: {
-			int newSalary;
-			cout << "Enter new salary: ";
-			cin >> newSalary;
-			(*it)->SetSalary(newSalary);
-			break;
-		}
-		default:
-			cout << "Unknown command." << endl;
-			break;
-		}
-		system("cls");
 	}
 }
 #pragma endregion

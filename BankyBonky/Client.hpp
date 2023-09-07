@@ -1,9 +1,5 @@
 #pragma once
-#include <iostream>
-
 #include "User.hpp"
-
-using namespace std;
 
 class Client : public User {
 public:
