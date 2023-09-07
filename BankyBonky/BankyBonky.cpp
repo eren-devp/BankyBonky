@@ -1,5 +1,4 @@
-﻿#pragma once
-#include <iostream>
+﻿#include <iostream>
 #include <tuple>
 
 #include "BankSystem.h"
@@ -38,16 +37,18 @@ int main()
 	try {
 		int input;
 
-		Manager manager = Manager();
+		Manager* manager = new Manager();
 		Client* client1 = new Client("Talha", "Genc", 19, 11111111111, "VIP"); // Test client.
 		Client* client2 = new Client("Burak", "Ergul", 22, 11111111111, "Client"); // Test client.
 		Employee* employee1 = new Employee("Cem", "Deveci", 19, 11111111111, "Manager", 33000); // Test employee.
 		Employee* employee2 = new Employee("Serhat", "Saglam", 18, 11111111111, "Employee", 18000); // Test employee.
+		Employee* ezgi = new Employee("Ezgi", "Erol", 19, 11111111111, "Digital Advertising Branch Manager", 37550); // Real employee.
 
-		manager.AddClient(client1);
-		manager.AddClient(client2);
-		manager.AddEmployee(employee1);
-		manager.AddEmployee(employee2);
+		manager->AddClient(client1);
+		manager->AddClient(client2);
+		manager->AddEmployee(ezgi);
+		manager->AddEmployee(employee1);
+		manager->AddEmployee(employee2);
 		
 		while (true)
 		{
@@ -61,63 +62,60 @@ int main()
 				break;
 
 			case 1: {
-				bool run = true;
 				system("cls");
 
-				while (run) {
+				while (true) {
 					int input_2 = -1;
 
-					manager.ShowClients(false);
+					manager->ShowClients(false);
 
 					cout << "For Detailed Informations: 0\nTo Exit: any negative number\n> ";
 					cin >> input_2;
 					cout << endl;
 
 					if (input_2 == 0) {
-						manager.ShowClients(true);
+						manager->ShowClients(true);
 					}
 					else if (input_2 < 0) {
-						run = false;
+						break;
 					}
 					else {
 						system("cls");
-						manager.ManageClient(input_2);
+						manager->ManageClient(input_2);
 					}
 				}
 				break;
 			}
 
 			case 2: {
-
-				bool run = true;
-
-				while (run) {
+				while (true) {
 					int input_2 = -1;
 
-					manager.ShowEmployees(false);
+					manager->ShowEmployees(false);
 
 					cout << "For Detailed Informations: 0\nTo Exit: any negative number\n> ";
 					cin >> input_2;
 
 					if (input_2 == 0) {
 						system("cls");
-						manager.ShowEmployees(true);
+						manager->ShowEmployees(true);
 					}
 					else if (input_2 < 0) {
-						run = false;
+						break;
 					}
 					else {
 						system("cls");
-						manager.ManageEmployee(input_2);
+						manager->ManageEmployee(input_2);
 					}
 				}
+				break;
 			}
 
 			case 3: {
 				auto infos = GetBasicInformations();
 
 				Client* newClient = new Client(&infos);
-				manager.AddClient(newClient);
+				manager->AddClient(newClient);
 				break;
 			}
 
@@ -129,7 +127,7 @@ int main()
 				cin >> salary;
 
 				Employee* newEmployee = new Employee(&infos, salary);
-				manager.AddEmployee(newEmployee);
+				manager->AddEmployee(newEmployee);
 				break;
 			}
 
