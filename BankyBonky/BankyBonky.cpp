@@ -45,11 +45,9 @@ int main()
 		Client* client2 = new Client("Burak", "Ergul", 22, 11111111111, "Client"); // Test client.
 		Employee* employee1 = new Employee("Cem", "Deveci", 19, 11111111111, "Manager", 33000); // Test employee.
 		Employee* employee2 = new Employee("Serhat", "Saglam", 18, 11111111111, "Employee", 18000); // Test employee.
-		Employee* ezgi = new Employee("Ezgi", "Erol", 19, 11111111111, "Digital Advertising Branch Manager", 37550); // Real employee.
 
 		manager->AddClient(client1);
 		manager->AddClient(client2);
-		manager->AddEmployee(ezgi);
 		manager->AddEmployee(employee1);
 		manager->AddEmployee(employee2);
 		
