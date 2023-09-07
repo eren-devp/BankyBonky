@@ -1,7 +1,10 @@
-﻿#include <iostream>
+﻿#pragma once
 #include <tuple>
+#include <iostream>
 
-#include "BankSystem.h"
+#include "Client.hpp"
+#include "Employee.hpp"
+#include "Manager.hpp"
 
 using namespace std;
 

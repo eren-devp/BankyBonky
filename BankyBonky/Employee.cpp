@@ -1,4 +1,4 @@
-#include "Employee.h"
+#include "Employee.hpp"
 
 Employee::Employee(string firstName_, string lastName_, int age_, long long idNumber_, string status_, int salary_) :
 	User(firstName_, lastName_, age_, idNumber_, status_)

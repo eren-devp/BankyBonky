@@ -1,8 +1,9 @@
 #pragma once
-#include "Client.h"
-#include "Employee.h"
 #include <list>
 #include <iterator>
+
+#include "Client.hpp"
+#include "Employee.hpp"
 
 using namespace std;
 

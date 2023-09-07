@@ -32,19 +32,16 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="User.h">
+    <ClInclude Include="Client.hpp">
       <Filter>Üst Bilgi Dosyaları</Filter>
     </ClInclude>
-    <ClInclude Include="Employee.h">
+    <ClInclude Include="Employee.hpp">
       <Filter>Üst Bilgi Dosyaları</Filter>
     </ClInclude>
-    <ClInclude Include="Client.h">
+    <ClInclude Include="Manager.hpp">
       <Filter>Üst Bilgi Dosyaları</Filter>
     </ClInclude>
-    <ClInclude Include="BankSystem.h">
-      <Filter>Üst Bilgi Dosyaları</Filter>
-    </ClInclude>
-    <ClInclude Include="Manager.h">
+    <ClInclude Include="User.hpp">
       <Filter>Üst Bilgi Dosyaları</Filter>
     </ClInclude>
   </ItemGroup>
